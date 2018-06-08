@@ -1,0 +1,18 @@
+<h3>Add a new dose</h3>
+
+<!-- connection to whole cocktail object, to make connection, in array -->
+<!-- and asscociate ingredient and drop down manu -->
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+
+    <div>
+      <%= f.input :description %>
+    </div>
+
+    <div>
+      <%= f.association :ingredient, collection: Ingredient.all %>
+    </div>
+
+    <div>
+      <%= f.button :submit %>
+    </div>
+  <% end %>

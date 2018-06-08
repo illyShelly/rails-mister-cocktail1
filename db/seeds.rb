@@ -8,26 +8,49 @@
 
 puts 'Cleaning database...'
 
+# Dose needs to be above Cocktail because connects both tables
+# To display everything needs to clean all(cocktail, dose, ingredient)
+# to seed my database with everything underneath
+Dose.destroy_all
 Cocktail.destroy_all
+Ingredient.destroy_all
+
+
+ck1 = Cocktail.new(name: "Mint Julep")
+ck1.save
+ck2 = Cocktail.new(name: "Whiskey Sour")
+ck2.save
+ck3 = Cocktail.new(name: "Mojito")
+ck3.save
+
 
 ing1 = Ingredient.new(name: "lemon")
 ing1.save
-ing2 = Ingredient.new(name: "ice")
+
+ing2 = Ingredient.new(name: "juice")
 ing2.save
+
 ing3 = Ingredient.new(name: "mint leaves")
 ing3.save
 
-ck1 = Cocktail.new(name: "mojito")
-ck1.save
-ck2 = Cocktail.new(name: "daiquiri")
-ck2.save
-ck3 = Cocktail.new(name: "margarita")
-ck3.save
 
-d1 = Dose.new(description: "mix white rum with rest of ingredients")
+# Mint Julep
+d1 = Dose.new(description: "Mix Bourbon whiskey with rest of ingredients")
 d1.ingredient = ing1
 d1.cocktail = ck1
 d1.save
+
+# Whiskey Sour
+d2 = Dose.new(description: "mix Whiskey with rest of ingredients")
+d2.ingredient = ing2
+d2.cocktail = ck2
+d2.save
+
+# Mojito
+d3 = Dose.new(description: "mix White rum with rest of ingredients")
+d3.ingredient = ing3
+d3.cocktail = ck3
+d3.save
 
 # I can see when rails db:seed in terminal
 # puts d1

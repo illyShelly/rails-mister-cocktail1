@@ -23,18 +23,18 @@ class CocktailsController < ApplicationController
         redirect_to cocktail_path(@cocktail)
        else
          render :new
-       end
-  end
-
-  def destroy
-    @cocktail.destroy
-    respond_to do |format|
-      format.html { redirect_to cocktails_url, notice: 'Cocktail was deleted.'}
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    # redirecting to all cocktails
+    redirect_to cocktails_path
+  end
+
   private
-  
+
   def cocktail_params
     params.require(:cocktail).permit(:name)
   end

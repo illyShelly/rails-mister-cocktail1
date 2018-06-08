@@ -2,6 +2,13 @@
 
 <% @cocktails.each do |cocktail| %>
   <h2><%= cocktail.name %></h2>
+  <%= link_to "show cocktail", cocktail_path(cocktail)  %>
 <% end %>
 
 <%= link_to 'New Cocktail', new_cocktail_path %>
+
+
+<!-- delete button in loop to delete whole object -->
+
+<!-- I cannot use cocktail_path(@cocktails) nevi jake id -->
+<!-- < link_to "show cocktail", cocktail_path(@cocktails.first)  > -->
