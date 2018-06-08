@@ -23,6 +23,6 @@ class DosesController < ApplicationController
   end
 end
 
-# routes ?? when to update
+# routes ?? to update
 # link_to back it did not work
 # to dose new (put amount of alcohol, and name of ingredient ??, permit id??)
