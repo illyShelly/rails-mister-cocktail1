@@ -18,21 +18,22 @@
   <% end %>
 </ul>
 
+
+<br>
+
+<%= link_to 'Create new dose',  new_cocktail_dose_path(@cocktail.id) %>
 <!-- link to delete whole cocktail -->
-
-<h4>Delete cocktail</h4>
-<%= link_to "Delete cocktail", cocktail_path(@cocktail), method: "DELETE"  %>
-
+<br>
+<%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete,
+    data: { confirm: "Are you sure?" }   %>
 <br>
 
 <!-- Checking path in rails routes prefix -->
 <%= link_to "Back to cocktails", cocktails_path  %>
-<%= link_to 'Create new dose',  new_cocktail_dose_path(@cocktail.id) %>
 
 <br>
 
 <%= link_to 'Create new cocktail', new_cocktail_path %>
-
 
 <!-- we changes routes to dose DELETE /doses/:id(.:format)  doses#destroy -->
   <!-- < link_to "Delete", cocktail_dose_path(@cocktail, dose), method: "DELETE"  > -->
