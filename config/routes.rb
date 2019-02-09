@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :cocktails do
     resources :doses, only: [:create, :new]
   end
+  # doses can be deleted separately, when making mistake
   resources :doses, only: [:destroy]
 end
